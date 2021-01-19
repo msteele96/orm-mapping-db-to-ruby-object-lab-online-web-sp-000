@@ -22,7 +22,7 @@ class Student
     sql = <<-SQL
       SELECT * FROM students WHERE name = '?' LIMIT 1
     SQL
-    DB[:conn].execute(sql).map { |row| self.new_from_db }.first
+    DB[:conn].execute(sql, name).map { |row| self.new_from_db }.first
     # find the student in the database given a name
     # return a new instance of the Student class
   end
