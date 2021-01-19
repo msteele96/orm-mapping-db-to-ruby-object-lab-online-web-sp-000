@@ -7,13 +7,14 @@ class Student
     new_student.name = row[1]
     new_student.grade = row[2]
     new_student
-    # sql = <<-SQL
-    #   SELECT * FROM students
-    # SQL
-    # DB[:conn].execute(sql)
   end
 
   def self.all
+    sql = <<-SQL
+      SELECT * FROM students
+    SQL
+    DB[:conn].execute(sql)
+    
     # retrieve all the rows from the "Students" database
     # remember each row should be a new instance of the Student class
   end
